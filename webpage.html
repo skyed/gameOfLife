@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>
+			EECS 183 GoL
+		</title>
+
+        <!-- jQuery Library -->
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+		<!-- Bootstrap Libraries -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+        <!-- Project JavaScript and Stylesheet Files -->
+		<script type="text/javascript" src="gameOfLife.js"></script>
+        <link type="text/css" rel="stylesheet" href="styles.css" />
+	</head>
+	
+    <body>
+        <h2>EECS 183: Conway's Game of Life</h2>
+        <canvas id="grid"></canvas>
+        <div id="button-wrapper">
+            <button id="still-life-btn">Draw Stillife</button>
+            <form>
+                <select id="still-life-select">
+                    <option value="block" selected>Block</option>
+                    <option value="beehive" >Beehive</option>
+                    <option value="loaf" >Loaf</option>
+                    <option value="boat" >Boat</option>
+                </select>
+            </form>
+            <button id="oscillator-btn">Draw Oscillator</button>
+            <form>
+                <select id="oscillator-select">
+                    <option value="blinker" selected>Blinker</option>
+                    <option value="toad" >Toad</option>
+                    <option value="beacon" >Beacon</option>
+                    <option value="pulsar" >Pulsar</option>
+                </select>
+            </form>
+            <button id="spaceship-btn">Draw Spaceship</button>
+            <form>
+                <select id="spaceship-select">
+                    <option value="glider" selected>Glider</option>
+                    <option value="lwss" >Spaceship</option>
+                </select>
+            </form>
+        </div>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+﻿body {
+    position: relative;
+}
+
+
+#grid {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: 1px solid #aaa;
+}
+
+
+#button-wrapper form {
+    display: inline-block;
+}
