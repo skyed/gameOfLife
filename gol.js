@@ -1,5 +1,5 @@
 $(function () {
-	var gridArray = [];
+	var CELL_SIZE = 10;
 	
 
 	function getGrid() {
@@ -10,12 +10,32 @@ $(function () {
 	function initGrid() {
 		var grid = getGrid();
 
+		var canvasWidth = $("#grid").width(),
+			canvasHeight = $("#grid").height();
+		
+		// place vertical grid lines
+		for (var i = 0; i < canvasWidth; i += CELL_SIZE) {
+			grid.moveTo(i, 0);
+			grid.lineTo(i, canvasWidth);		
+			
+		}
+
+		// place horizontal grid lines
+		for (var j = 0; j < canvasHeight; j += CELL_SIZE) {
+			grid.moveTo(0, j);
+			grid.lineTo(canvasWidth, j);
+		}
+		
+		// draw grid lines
+		grid.strokeStyle = "#ddd";
+		grid.stroke();
 		
 	}
+	initGrid();
 
 
 	function initArray() {
-		
+
 	}
 
     $("#still-life-btn, #oscillator-btn, #spaceship-btn").click(function () {
