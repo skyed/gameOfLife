@@ -79,13 +79,15 @@ $(function () {
     });
 
 
+
     /********************
      *	YOUR CODE HERE  *
      ********************/
 
-     function evolveStep(){
 
-     }
+	function evolveStep(){
+
+	}
 
     function update(){
 
@@ -103,19 +105,20 @@ $(function () {
 
     }
 
-    function drawPattern(inputPattern) {
+
+    function drawPattern(patternName) {
 
     }
 
-    function drawStillLife() {
+    function drawStillLife(patternName) {
 
     }
 
-    function drawOscillator() {
+    function drawOscillator(patternName) {
 
     }
 
-    function drawSpaceship() {
+    function drawSpaceship(patternName) {
 
     }
 });
