@@ -60,12 +60,12 @@ $(function () {
         drawPattern(pattern);
     });
 
-
+    
     $("#start-game").click(function() {
 
     });
     $("#stop-game").click(function() {
-    	
+
     });
 
 
@@ -73,7 +73,15 @@ $(function () {
      *	YOUR CODE HERE  *
      ********************/
 
+     function evolveStep(){
+
+     }
+
     function update(){
+
+    }
+
+    function populateGameGrid(){
 
     }
 
