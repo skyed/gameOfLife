@@ -2,6 +2,7 @@ $(function () {
 	var CELL_SIZE = 10,
 		CELL_ALIVE_COLOR = "#2ecc71",
 		CELL_DEAD_COLOR = "#e74c3c",
+		GENERATION_INTERVAL = 2500,
 		gameGrid = new Array(70);
 
 	function Cell() {
@@ -38,8 +39,6 @@ $(function () {
 		// draw grid lines
 		grid.strokeStyle = "#ddd";
 		grid.stroke();
-
-		
 	}
 	initGrid();
 	initArray();
@@ -61,11 +60,16 @@ $(function () {
 
     
     var isRunning = false;
+    function runGoL() {
+		if (!isRunning) {
+			return;
+		}
+		evolveStep();
+		setTimeout(runGoL, GENERATION_INTERVAL);
+    }
     $("#start-game").click(function() {
     	isRunning = true;
-    	while (isRunning) {
-
-    	}
+    	runGoL();
     });
     $("#stop-game").click(function() {
     	isRunning = false;
@@ -79,7 +83,7 @@ $(function () {
 
 
 	function evolveStep(){
-
+		console.log("Evolve step called");
 	}
 
     function update(){
