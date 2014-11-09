@@ -2,7 +2,9 @@ $(function () {
 	var CELL_SIZE = 10, // each cell will be 10 x 10 pixels
 		CELL_ALIVE_COLOR = "#2ecc71",
 		CELL_DEAD_COLOR = "#e74c3c",
-		gameGrid = new Array(70);
+		NUM_COLS = 70,
+                NUM_ROWS = 40,
+		gameGrid = new Array(NUM_ROWS);
 
 	var cell = {
 		xPoint: 0,
@@ -51,15 +53,11 @@ $(function () {
 
 	initArray();
 
-        // TODO: You need to complete this function. It is started for you.
-        // Requires: Nothing.
-        // Modifies: 
-        // Effects: Creates a 2D array of cells
 	function initArray() {
 
-		for(var k = 0; k < 70; ++k)
+		for(var k = 0; k < NUM_ROWS; ++k)
 		{
-			gameGrid[k] = new Array(40);
+			gameGrid[k] = new Array(NUM_COLS);
 		}
 	}
 
@@ -84,28 +82,64 @@ $(function () {
      *	YOUR CODE HERE  *
      ********************/
 
+    /**
+     * Requires: Nothing.
+     * Modifies: gameGrid
+     * Effects: Changes the grid to evolve the cells
+     *          to the next generation according to
+     *          the rules of the Game of Life.
+     * calls: countNeighbors, update
+     */
+    function evolveStep(){
 
-	function evolveStep(){
+    }
 
-	}
-
+    /**
+     * Requires: Nothing.
+     * Modifies: gameGrid
+     * Effects: Updates the alive/dead status of each cell
+     *         based on its count of live neighbors.
+     */
     function update(){
 
     }
 
+    /**
+     * Requires: Nothing.
+     * Modifies: gameGrid
+     * Effects: Fills and populates gameGrid with dead cells.
+     */
     function populateGameGrid(){
 
     }
 
-    function countNeighbors(grid, position){
+    /** 
+     * Requires: xCoord and yCoord are within bounds of the array.
+     * Modifies: Nothing.
+     * Effects: Counts the number of live neighbors for
+     *          the cell and returns the count.
+     * calls validPosition
+     */
+    function countNeighbors(grid, xCoord, yCoord){
 
     }
 
-    function validPosition(grid, position){
+    /**
+     * Requires: xCoord and yCoord are integers.
+     * Modifies: Nothing.
+     * Efects: Returns true if xCoord and yCoord are within
+     *         bounds of the array. Returns false otherwise.
+     */
+    function validPosition(xCoord, yCoord){
 
     }
 
-
+    /**
+     * Requires: patternNema is a string 
+     * Modifies: 
+     * Effects: 
+     * calls drawStillLife, drawOscillator, drawSpaceship
+     */
     function drawPattern(patternName) {
 
     }
