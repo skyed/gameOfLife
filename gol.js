@@ -8,7 +8,8 @@ $(function () {
 		xPoint: 0,
 		yPoint: 0,
 		fillStyle: 'white',
-		dead: false
+		dead: false,
+		liveNeighbors: 0
 	};
 		
 
@@ -69,18 +70,38 @@ $(function () {
         drawPattern(pattern);
     });
 
-
+    
     $("#start-game").click(function() {
 
     });
     $("#stop-game").click(function() {
-    	
+
     });
 
 
     /********************
      *	YOUR CODE HERE  *
      ********************/
+
+     function evolveStep(){
+
+     }
+
+    function update(){
+
+    }
+
+    function populateGameGrid(){
+
+    }
+
+    function countNeighbors(grid, position){
+
+    }
+
+    function validPosition(grid, position){
+
+    }
 
     function drawPattern(inputPattern) {
 
