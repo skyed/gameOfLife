@@ -4,15 +4,14 @@ $(function () {
 		CELL_DEAD_COLOR = "#e74c3c",
 		gameGrid = new Array(70);
 
-	var cell = {
-		xPoint: 0,
-		yPoint: 0,
-		fillStyle: 'white',
-		dead: false,
-		liveNeighbors: 0
-	};
+	function Cell() {
+		this.xPoint = 0;
+		this.yPoint = 0;
+		this.fillStyle = "white";
+		this.dead = true;
+		this.liveNeighbors = 0;
+	}
 		
-
 
 	function getGrid() {
 		var c = document.getElementById("grid");
@@ -61,11 +60,15 @@ $(function () {
     });
 
     
+    var isRunning = false;
     $("#start-game").click(function() {
+    	isRunning = true;
+    	while (isRunning) {
 
+    	}
     });
     $("#stop-game").click(function() {
-
+    	isRunning = false;
     });
 
 
