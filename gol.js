@@ -6,7 +6,8 @@ $(function () {
 		xPoint: 0,
 		yPoint: 0,
 		fillStyle: 'white',
-		dead: false
+		dead: false,
+		liveNeighbors: 0
 	};
 
 	function getGrid() {
@@ -59,6 +60,18 @@ $(function () {
     /********************
      *	YOUR CODE HERE  *
      ********************/
+
+    function update(){
+
+    }
+
+    function countNeighbors(grid, position){
+
+    }
+
+    function validPosition(grid, position){
+
+    }
 
     function drawPattern(inputPattern) {
 
