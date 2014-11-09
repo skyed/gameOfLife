@@ -2,6 +2,13 @@ $(function () {
 	var CELL_SIZE = 10;
 	var gameGrid = new Array(70);
 
+	var cell = {
+		xPoint: 0,
+		yPoint: 0,
+		fillStyle: 'white',
+		dead: false
+	};
+
 	function getGrid() {
 		var c = document.getElementById("grid");
 		return c.getContext("2d");
@@ -18,7 +25,6 @@ $(function () {
 			grid.moveTo(i, 0);
 			grid.lineTo(i, canvasWidth);	
 		}
-
 		// place horizontal grid lines
 		for (var j = 0; j < canvasHeight; j += CELL_SIZE) {
 			grid.moveTo(0, j);
@@ -29,24 +35,22 @@ $(function () {
 		grid.strokeStyle = "#ddd";
 		grid.stroke();
 
-		for(var k = 0; k < 70; ++k)
-		{
-
-			gameGrid[k] = new Array(40);
-		}
 		
 	}
 	initGrid();
-
+	initArray();
 
 	function initArray() {
 
+		for(var k = 0; k < 70; ++k)
+		{
+			gameGrid[k] = new Array(40);
+		}
 	}
 
     $("#still-life-btn, #oscillator-btn, #spaceship-btn").click(function () {
         var selector = $(this).attr("id");
         selector = "#" + selector.replace("btn", "select");
-
         var pattern = $(selector).val();
         drawPattern(pattern);
     });
