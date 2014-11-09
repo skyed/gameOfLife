@@ -1,6 +1,8 @@
 $(function () {
-	var CELL_SIZE = 10;
-	var gameGrid = new Array(70);
+	var CELL_SIZE = 10,
+		CELL_ALIVE_COLOR = "#2ecc71",
+		CELL_DEAD_COLOR = "#e74c3c",
+		gameGrid = new Array(70);
 
 	var cell = {
 		xPoint: 0,
@@ -9,6 +11,8 @@ $(function () {
 		dead: false,
 		liveNeighbors: 0
 	};
+		
+
 
 	function getGrid() {
 		var c = document.getElementById("grid");
@@ -54,6 +58,14 @@ $(function () {
         selector = "#" + selector.replace("btn", "select");
         var pattern = $(selector).val();
         drawPattern(pattern);
+    });
+
+
+    $("#start-game").click(function() {
+
+    });
+    $("#stop-game").click(function() {
+    	
     });
 
 
