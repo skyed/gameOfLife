@@ -1,6 +1,8 @@
 $(function () {
-	var CELL_SIZE = 10;  // each cell will be 10 x 10 pixels	
-	var gameGrid = new Array(70);
+	var CELL_SIZE = 10, // each cell will be 10 x 10 pixels
+		CELL_ALIVE_COLOR = "#2ecc71",
+		CELL_DEAD_COLOR = "#e74c3c",
+		gameGrid = new Array(70);
 
 	var cell = {
 		xPoint: 0,
@@ -8,6 +10,8 @@ $(function () {
 		fillStyle: 'white',
 		dead: false
 	};
+		
+
 
 	function getGrid() {
 		var c = document.getElementById("grid");
@@ -44,15 +48,12 @@ $(function () {
         // lines on the canvas grid object
 	initGrid();
 
-        // TODO: You need to complete this function. It is started for you.
-        // Requires: Nothing.
-        // Modifies: 
-        // Effects: Creates a 2D array of cells
-=======
 	initArray();
 
         // TODO: You need to complete this function. It is started for you.
         // Requires: Nothing.
+        // Modifies: 
+        // Effects: Creates a 2D array of cells
 	function initArray() {
 
 		for(var k = 0; k < 70; ++k)
@@ -66,6 +67,14 @@ $(function () {
         selector = "#" + selector.replace("btn", "select");
         var pattern = $(selector).val();
         drawPattern(pattern);
+    });
+
+
+    $("#start-game").click(function() {
+
+    });
+    $("#stop-game").click(function() {
+    	
     });
 
 
