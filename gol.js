@@ -40,9 +40,6 @@ $(function () {
 		grid.strokeStyle = "#ddd";
 		grid.stroke();
 	}
-	initGrid();
-	initArray();
-
 	function initArray() {
 
 		for(var k = 0; k < 70; ++k)
@@ -50,7 +47,10 @@ $(function () {
 			gameGrid[k] = new Array(40);
 		}
 	}
+	initGrid();
+	initArray();
 
+    
     $("#still-life-btn, #oscillator-btn, #spaceship-btn").click(function () {
         var selector = $(this).attr("id");
         selector = "#" + selector.replace("btn", "select");
