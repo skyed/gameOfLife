@@ -114,28 +114,28 @@ $(function () {
     }
 
     /** 
-     * Requires: xCoord and yCoord are within bounds of the array.
+     * Requires: row and col are within bounds of the array.
      * Modifies: Nothing.
      * Effects: Counts the number of live neighbors for
      *          the cell and returns the count.
      * calls validPosition
      */
-    function countNeighbors(grid, xCoord, yCoord){
+    function countNeighbors(grid, row, col){
 
     }
 
     /**
-     * Requires: xCoord and yCoord are integers.
+     * Requires: row and col are integers.
      * Modifies: Nothing.
-     * Efects: Returns true if xCoord and yCoord are within
+     * Efects: Returns true if row and col are within
      *         bounds of the array. Returns false otherwise.
      */
-    function validPosition(xCoord, yCoord){
+    function validPosition(row, col){
 
     }
 
     /**
-     * Requires: patternNema is a string 
+     * Requires: patternName is a string 
      * Modifies: 
      * Effects: 
      * calls drawStillLife, drawOscillator, drawSpaceship
