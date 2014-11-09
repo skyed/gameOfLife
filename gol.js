@@ -1,12 +1,15 @@
 $(function () {
-	var CELL_SIZE = 10;
+	var CELL_SIZE = 10;  // each cell will be 10 x 10 pixels
 	
-
+        // This function is given to you
+        // It returns the grid object
 	function getGrid() {
 		var c = document.getElementById("grid");
 		return c.getContext("2d");
 	}
 
+        // This function is given to you
+        // It draws the grid lines on the canvas grid object
 	function initGrid() {
 		var grid = getGrid();
 
@@ -31,9 +34,15 @@ $(function () {
 		grid.stroke();
 		
 	}
+        
+        // this function call initializes the grid by drawing the grid
+        // lines on the canvas grid object
 	initGrid();
 
-
+        // TODO: You need to complete this function. It is started for you.
+        // Requires: Nothing.
+        // Modifies: 
+        // Effects: Creates a 2D array of cells
 	function initArray() {
 
 	}
