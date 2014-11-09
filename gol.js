@@ -1,6 +1,6 @@
 $(function () {
 	var CELL_SIZE = 10;
-	
+	var gameGrid = new Array(70);
 
 	function getGrid() {
 		var c = document.getElementById("grid");
@@ -16,8 +16,7 @@ $(function () {
 		// place vertical grid lines
 		for (var i = 0; i < canvasWidth; i += CELL_SIZE) {
 			grid.moveTo(i, 0);
-			grid.lineTo(i, canvasWidth);		
-			
+			grid.lineTo(i, canvasWidth);	
 		}
 
 		// place horizontal grid lines
@@ -29,6 +28,12 @@ $(function () {
 		// draw grid lines
 		grid.strokeStyle = "#ddd";
 		grid.stroke();
+
+		for(var k = 0; k < 70; ++k)
+		{
+
+			gameGrid[k] = new Array(40);
+		}
 		
 	}
 	initGrid();
