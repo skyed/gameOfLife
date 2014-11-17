@@ -145,10 +145,10 @@ $(function () {
 
 
     /*
-     * Requires: row and col are integers.
+     * Requires: row and col are integers
      * Modifies: Nothing.
      * Efects: Returns true if row and col are within
-     *         bounds of the array. Returns false otherwise.
+     *         bounds of the grid, returns false otherwise.
      */
     function validPosition(row, col){
 
@@ -156,10 +156,11 @@ $(function () {
 
 
     /**
-     * Requires: Nothing.
-     * Modifies: gameGrid
-     * Effects: Fills and populates gameGrid with dead cells.  populateGameGrid
-     *          also sets the xPosition and yPosition data members of each cell.
+     * Requires: grid is a 2d array
+     * Modifies: grid
+     * Effects: Fills and populates gameGrid with default cells.  populateGameGrid
+     *          also sets the xPosition and yPosition data members of each Cell
+     *          object to match its x and y coordinates on the HTML canvas.
      */
     function populateGameGrid(grid){
 
@@ -167,7 +168,8 @@ $(function () {
 
 
     /** 
-     * Requires: 0 <= row && row < NUM_ROWS, 0 <= col && col < NUM_COLS
+     * Requires: 0 <= row && row < NUM_ROWS, 0 <= col && col < NUM_COLS,
+     *           grid is a 2d array of Cell objects
      * Modifies: Nothing.
      * Effects: Counts the number of live neighbors for
      *          the cell at row,col in grid and returns the count.
@@ -179,7 +181,7 @@ $(function () {
 
 
     /*
-     * Requires: grid is a 2d array of Cells
+     * Requires: grid is a 2d array of Cell objects
      * Modifies: grid
      * Effects: Updates the liveNeighbors data member of each cell in grid
      */
@@ -188,32 +190,30 @@ $(function () {
     }
 
 
-    /**
-     * Requires: grid is a 2d array of Cells
-     * Modifies: grid, HTML canvas
-     * Effects: Changes the grid to evolve the cells to the next generation according 
-     *          to the rules of the Game of Life.  In order to correctly move forward,
-     *          all cells should count the number of live neighbors they have before 
-     *          proceeding to change the state of all cells.
-     */
-    function evolveStep(grid){
-
-    }
-
-
-    /**
-     * Requires: grid is a 2d array of Cells
+    /*
+     * Requires: grid is a 2d array of Cell objects
      * Modifies: grid, the HTML canvas
      * Effects: Changes the state of all cells in grid, according to the number of
      *          liveNeighbors each cell has, and the rules of the Game of Life.
      *          Remember, that, after updating the state of the cell in grid that
      *          you also need to draw the change to the HTML canvas using getCanvas()
      */
-    function update(grid){
+    function updateCells(grid){
 
     }
 
 
+    /*
+     * Requires: grid is a 2d array of Cell objects
+     * Modifies: grid, HTML canvas
+     * Effects: Changes the grid to evolve the cells to the next generation 
+     *          according to the rules of the Game of Life.  In order to correctly 
+     *          move forward, all cells should count the number of live neighbors 
+     *          they have before proceeding to change the state of all cells.
+     */
+    function evolveStep(grid){
+
+    }
 
 
     /* 
@@ -223,20 +223,22 @@ $(function () {
      */
     var TEST_DRAW_PATTERN = false;
 
-    /**
+
+    /*
      * Requires: 0 <= row && row < NUM_ROWS, 0 <= col && col < NUM_COLS,
-                 patternName is one of the following strings:
-                    "Block"
-                    "Beehive"
-                    "Loaf"
-                    "Boat"
-                    "Blinker"
-                    "Toad"
-                    "Beacon"
-                    "Pulsar"
-                    "Glider"
-                    "Lwss"
-     * Modifies: grid and the HTML canvas
+     *          grid is a 2d array of Cell objects, patternName is one of the 
+     *          following strings:
+     *             "Block"
+     *             "Beehive"
+     *             "Loaf"
+     *             "Boat"
+     *             "Blinker"
+     *             "Toad"
+     *             "Beacon"
+     *             "Pulsar"
+     *             "Glider"
+     *             "Lwss"
+     * Modifies: grid, HTML canvas
      * Effects: This function is called when a user clicks on one of the HTML
      *          "Draw <pattern>" buttons.  patternName is a string containing the
      *          name of the pattern that is to be drawn on the canvas.  The
@@ -250,12 +252,13 @@ $(function () {
 
     /*
      * Requires: 0 <= row && row < NUM_ROWS, 0 <= col && col < NUM_COLS,
-                 patternName is one of the following:
-                    "Block"
-                    "Beehive"
-                    "Loaf"
-                    "Boat"
-     * Modifies: grid and the HTML canvas
+     *           grid is a 2d array of Cell objects,
+     *           patternName is one of the following:
+     *              "Block"
+     *              "Beehive"
+     *              "Loaf"
+     *              "Boat"
+     * Modifies: grid, HTML canvas
      * Effects: Draws patternName to the HTML canvas.  row and col represent the
      *          top left corner of the pattern that is to be drawn. This function
      *          should draw as much of the pattern as possible without going outside
@@ -272,11 +275,12 @@ $(function () {
 
     /*
      * Requires: 0 <= row && row < NUM_ROWS, 0 <= col && col < NUM_COLS,
-                 patternName is one of the following:
-                    "Blinker"
-                    "Toad"
-                    "Beacon"
-                    "Pulsar"
+     *           grid is a 2d array of Cell objects,
+     *           patternName is one of the following:
+     *              "Blinker"
+     *              "Toad"
+     *              "Beacon"
+     *              "Pulsar"
      * Modifies: grid and the HTML canvas
      * Effects: Draws patternName to the HTML canvas.  row and col represent the
      *          top left corner of the pattern that is to be drawn. This function
@@ -294,9 +298,10 @@ $(function () {
     
     /*
      * Requires: 0 <= row && row < NUM_ROWS, 0 <= col && col < NUM_COLS,
-                 patternName is one of the following:
-                    "Glider"
-                    "Lwss"
+     *           grid is a 2d array of Cell objects,
+     *           patternName is one of the following:
+     *              "Glider"
+     *              "Lwss"
      * Modifies: grid and the HTML canvas
      * Effects: Draws patternName to the HTML canvas.  row and col represent the
      *          top left corner of the pattern that is to be drawn. This function
