@@ -335,7 +335,33 @@ $(function () {
         initArray();
         populateGameGrid(gameGrid);
 
+        
         // Add any necessary functionality you need for the Reach portion below here
+    
+        $("#grid").click(function(e) {
+	var offset = $(this).offset();
+
+var xpos = Math.floor((e.clientX - offset.left) / (CELL_SIZE));
+var ypos = Math.floor((e.clientY - offset.top) / (CELL_SIZE));
+
+var canvas = getCanvas();
+canvas.fillStyle = CELL_ALIVE_COLOR;
+canvas.fillRect(xpos*10, ypos*10, CELL_SIZE, CELL_SIZE);
+
+if (gameGrid[ypos][xpos].fillStyle === "white") {
+	gameGrid[ypos][xpos].fillStyle = CELL_ALIVE_COLOR;
+	canvas.fillStyle = gameGrid[ypos][xpos].fillStyle;
+	canvas.fillRect(xpos*10, ypos*10, CELL_SIZE, CELL_SIZE);
+
+} else if (gameGrid[ypos][xpos].fillStyle === CELL_ALIVE_COLOR) {
+	gameGrid[ypos][xpos].fillStyle = "white";
+	canvas.fillStyle = gameGrid[ypos][xpos].fillStyle;
+	canvas.fillRect(xpos*10, ypos*10, CELL_SIZE, CELL_SIZE);
+}
+drawGridLines();
+});
+
+        
     }
 
 
